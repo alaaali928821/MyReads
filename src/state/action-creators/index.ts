@@ -23,7 +23,7 @@ export const addToRead = (payload: {}) => {
 export const addtoNone = () => {
     return (dispatch: Dispatch<Action>) => {
         dispatch({
-            type: ActionType.NONE
+            type: ActionType.CURREAD
         })
     }
 }

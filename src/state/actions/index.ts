@@ -11,7 +11,7 @@ interface ReadAction {
 }
 
 interface NoneAction {
-    type: ActionType.NONE
+    type: ActionType.CURREAD
 }
 
 export type Action = WantToReadAction | ReadAction | NoneAction;

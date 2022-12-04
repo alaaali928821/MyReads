@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../state';
 import { RootState } from '../state/reducers';
+import { oneBook } from '../types/book';
 
-function Book() {
-  const state = useSelector((state: RootState) => state.bank)
+function Book(props: { book: oneBook }) {
+  const state = useSelector((state: RootState) => state.book)
   const dispatch = useDispatch();
 
   const { addTowantToread, addToRead, addtoNone } = bindActionCreators(actionCreators, dispatch)
@@ -17,11 +18,11 @@ function Book() {
             className="book-cover"
             style={{
               width: 128,
-              height: 193,
-              backgroundImage:
-                'url("http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api")',
+              height: 193
             }}
-          ></div>
+          >
+            <img src={props.book.imageLinks.smallThumbnail} />
+          </div>
           <div className="book-shelf-changer">
             <select>
               <option value="none" disabled>
@@ -36,8 +37,8 @@ function Book() {
             </select>
           </div>
         </div>
-        <div className="book-title">To Kill a Mockingbird</div>
-        <div className="book-authors">Harper Lee</div>
+        <div className="book-title">{props.book.title}</div>
+        <div className="book-authors">{props.book.authors}</div>
       </div>
     </li>
   )

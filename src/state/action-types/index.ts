@@ -1,5 +1,5 @@
 export enum ActionType {
-    READ = "read",
+    CURREAD = "currentlyReading",
     WTREAD = "wantToRead",
-    NONE = "none"
+    READ = "read"
 }

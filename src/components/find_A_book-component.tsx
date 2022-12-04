@@ -1,10 +1,9 @@
-import { useState } from "react";
-import React from 'react';
+import "../App.css";
+import { Link } from 'react-router-dom'
 function FindABook() {
-    // const [showSearchPage, setShowSearchpage] = useState(false);
     return (
         <div className="open-search">
-            {/* <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a> */}
+             <Link to="/search"><button>Add a book</button></Link>
         </div>
     )
 }
