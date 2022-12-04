@@ -1,6 +1,14 @@
-import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../state';
+import { RootState } from '../state/reducers';
 
 function Book() {
+  const state = useSelector((state: RootState) => state.bank)
+  const dispatch = useDispatch();
+
+  const { addTowantToread, addToRead, addtoNone } = bindActionCreators(actionCreators, dispatch)
+
   return (
     <li>
       <div className="book">
@@ -22,9 +30,9 @@ function Book() {
               <option value="currentlyReading">
                 Currently Reading
               </option>
-              <option value="wantToRead">Want to Read</option>
-              <option value="read">Read</option>
-              <option value="none">None</option>
+              <option onClick={() => addTowantToread({})} value="wantToRead">Want to Read</option>
+              <option onClick={() => addToRead({})} value="read">Read</option>
+              <option onClick={() => addtoNone()} value="none">None</option>
             </select>
           </div>
         </div>
