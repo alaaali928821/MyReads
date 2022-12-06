@@ -4,7 +4,7 @@ import { actionCreators } from '../state';
 import { RootState } from '../state/reducers';
 import { oneBook } from '../types/book';
 
-function Book(props: { book: oneBook }) {
+function Book(props: { book: oneBook}) {
   const state = useSelector((state: RootState) => state.book)
   const dispatch = useDispatch();
 

@@ -1,6 +1,4 @@
 import Book from "./book-component"
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { oneBook } from "../types/book";
 import { Shelv } from "../types/shelf";
 
