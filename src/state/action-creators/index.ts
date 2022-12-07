@@ -2,7 +2,7 @@ import { Dispatch } from "redux"
 import { ActionType } from "../action-types"
 import { Action } from "../actions/index"
 
-export const addTowantToread = (payload: {}) => {
+export function addTowantToread(payload: {}) {
     return (dispatch: Dispatch<Action>) => {
         dispatch({
             type: ActionType.WTREAD,
@@ -20,10 +20,40 @@ export const addToRead = (payload: {}) => {
     }
 }
 
-export const addtoNone = () => {
+export const addtoCurrentlyReading = (payload: {}) => {
     return (dispatch: Dispatch<Action>) => {
         dispatch({
-            type: ActionType.CURREAD
+            type: ActionType.CURREAD,
+            payload: payload
+        })
+    }
+}
+
+export function getAllBooks(payload: []) {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.GETALL,
+            payload
+        })
+    }
+}
+
+
+export function getSearchedBooks(payload: []) {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.SEARCHEDBOOKs,
+            payload
+        })
+    }
+}
+
+
+export function emptySearchedBooks() {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.EMPTYSEARCHEDBOOK,
+            payload : []
         })
     }
 }

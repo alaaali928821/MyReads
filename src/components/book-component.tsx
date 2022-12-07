@@ -1,14 +1,29 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../state';
-import { RootState } from '../state/reducers';
+import { ActionType } from '../state/action-types';
 import { oneBook } from '../types/book';
 
-function Book(props: { book: oneBook}) {
-  const state = useSelector((state: RootState) => state.book)
+function Book(props: { book: oneBook }) {
   const dispatch = useDispatch();
 
-  const { addTowantToread, addToRead, addtoNone } = bindActionCreators(actionCreators, dispatch)
+  const { addTowantToread, addToRead, addtoCurrentlyReading } = bindActionCreators(actionCreators, dispatch)
+  const handleOnSelect = (e: any) => {
+    switch (e.target.value) {
+      case ActionType.WTREAD:
+        addTowantToread(props.book)
+        break;
+      case ActionType.READ:
+        addToRead(props.book)
+        break;
+      case ActionType.CURREAD:
+        addtoCurrentlyReading(props.book)
+        break;
+      default:
+        break;
+    }
+  }
+
 
   return (
     <li>
@@ -24,16 +39,10 @@ function Book(props: { book: oneBook}) {
             <img src={props.book.imageLinks.smallThumbnail} />
           </div>
           <div className="book-shelf-changer">
-            <select>
-              <option value="none" disabled>
-                Move to...
-              </option>
-              <option value="currentlyReading">
-                Currently Reading
-              </option>
-              <option onClick={() => addTowantToread({})} value="wantToRead">Want to Read</option>
-              <option onClick={() => addToRead({})} value="read">Read</option>
-              <option onClick={() => addtoNone()} value="none">None</option>
+            <select onChange={handleOnSelect}>
+              <option value="wantToRead">Want to Read</option>
+              <option value="read">Read</option>
+              <option value="currentlyReading">Currently reading</option>
             </select>
           </div>
         </div>

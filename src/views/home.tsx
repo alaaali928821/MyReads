@@ -4,6 +4,11 @@ import React, { useEffect, useState } from "react";
 import * as BooksAPI from "../BooksAPI"
 import { oneBook } from "../types/book"
 import { Shelv } from "../types/shelf"
+import { useSelector } from "react-redux";
+import { RootState } from '../state/reducers';
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from 'redux';
+import { actionCreators } from "../state";
 
 
 function Home() {
@@ -14,12 +19,13 @@ function Home() {
     { key: 'read', name: 'Read' },
   ]
 
-  const initAllBook: oneBook[] = []
-  const [AllBooks, setAllBooks] = useState(initAllBook)
+  const AllBooks: oneBook[] = useSelector((state: RootState) => state.book)
+  const dispatchBooks = useDispatch()
+  const { getAllBooks } = bindActionCreators(actionCreators, dispatchBooks)
 
   useEffect(() => {
     BooksAPI.getAll().then((books) => {
-      setAllBooks(books);
+      getAllBooks(books)
     })
       .catch(() => {
         // handel Error
