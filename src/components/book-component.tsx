@@ -36,7 +36,7 @@ function Book(props: { book: oneBook }) {
               height: 193
             }}
           >
-            <img src={props.book.imageLinks.smallThumbnail} />
+            <img id="bookImg" src={props.book.imageLinks.smallThumbnail} />
           </div>
           <div className="book-shelf-changer">
             <select onChange={handleOnSelect}>
