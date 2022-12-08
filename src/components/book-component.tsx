@@ -39,8 +39,9 @@ function Book(props: { book: oneBook }) {
             <img id="bookImg" src={props.book.imageLinks.smallThumbnail} />
           </div>
           <div className="book-shelf-changer">
-            <select onChange={handleOnSelect}>
-              <option value="wantToRead">Want to Read</option>
+            <select onChange={handleOnSelect} id="selecteId" value={props.book.shelf}>
+              <option value="moveTo" >Move To</option>
+              <option value="wantToRead" >Want to Read</option>
               <option value="read">Read</option>
               <option value="currentlyReading">Currently reading</option>
             </select>

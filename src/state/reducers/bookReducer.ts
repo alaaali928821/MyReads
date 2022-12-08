@@ -9,7 +9,6 @@ const reducer = (state = initialState, action: Action): {} => {
             return [...state, ...action.payload];
 
         case ActionType.SEARCHEDBOOKs:
-            console.log(state);
             if (state.length > 0) {
                 state = [];
                 state = [...state, ...action.payload]

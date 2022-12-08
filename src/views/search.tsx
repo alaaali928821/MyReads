@@ -18,8 +18,6 @@ export const Search: React.FC = () => {
 
     const handleChange = (e: { target: { value: string; }; }) => {
         setMessage(e.target.value);
-        console.log(e.target.value)
-        debugger
         if (e.target.value !== "") {
             BookApis.search(e.target.value, 20).then((filterdBooks) => {
                 getSearchedBooks(filterdBooks);
