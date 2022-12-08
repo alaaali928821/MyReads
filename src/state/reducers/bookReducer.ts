@@ -21,19 +21,19 @@ const reducer = (state = initialState, action: Action): {} => {
             return [...state.filter(book => book.id !== action.payload.id)
                 , {
                 ...action.payload,
-                shelf: "wantToread"
+                shelf: ActionType.WTREAD
             }];
         case ActionType.READ:
             return [...state.filter(book => book.id !== action.payload.id)
                 , {
                 ...action.payload,
-                shelf: "read"
+                shelf: ActionType.READ
             }];
         case ActionType.CURREAD:
             return [...state.filter(book => book.id !== action.payload.id)
                 , {
                 ...action.payload,
-                shelf: "currentlyReading"
+                shelf: ActionType.CURREAD
             }];
         default:
             return state
