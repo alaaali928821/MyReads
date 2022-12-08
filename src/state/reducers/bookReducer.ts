@@ -6,7 +6,13 @@ const initialState: any[] = [];
 const reducer = (state = initialState, action: Action): {} => {
     switch (action.type) {
         case ActionType.GETALL:
-            return [...state, ...action.payload];
+            if (state.length === 0) {
+                return [...state, ...action.payload];
+            } else {
+                state = []
+                return [...state, ...action.payload];
+            }
+            
 
         case ActionType.SEARCHEDBOOKs:
             if (state.length > 0) {

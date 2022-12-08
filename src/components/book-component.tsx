@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../state';
 import { ActionType } from '../state/action-types';
 import { oneBook } from '../types/book';
+import * as BooksAPI from "../BooksAPI"
 
 function Book(props: { book: oneBook }) {
   const dispatch = useDispatch();
@@ -11,12 +12,15 @@ function Book(props: { book: oneBook }) {
   const handleOnSelect = (e: any) => {
     switch (e.target.value) {
       case ActionType.WTREAD:
+        updateSelectedBook(props.book, ActionType.WTREAD)
         addTowantToread(props.book)
         break;
       case ActionType.READ:
+        updateSelectedBook(props.book, ActionType.READ)
         addToRead(props.book)
         break;
       case ActionType.CURREAD:
+        updateSelectedBook(props.book, ActionType.CURREAD)
         addtoCurrentlyReading(props.book)
         break;
       default:
@@ -24,6 +28,11 @@ function Book(props: { book: oneBook }) {
     }
   }
 
+  const updateSelectedBook = (book: oneBook, shelf: any) => {
+    BooksAPI.update(book, shelf).then((updatedBook) => {
+      console.log(updatedBook)
+    })
+  }
 
   return (
     <li>
