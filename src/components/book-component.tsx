@@ -30,7 +30,6 @@ function Book(props: { book: oneBook }) {
 
   const updateSelectedBook = (book: oneBook, shelf: any) => {
     BooksAPI.update(book, shelf).then((updatedBook) => {
-      console.log(updatedBook)
     })
   }
 

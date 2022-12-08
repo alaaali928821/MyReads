@@ -1,36 +1,85 @@
-# Getting Started with Create React App
+**\# Getting Started with Create React App**
 
-### `npm install`
 
-## Available Scripts
+ 
+
+**\### \`npm install\`**
+
+
+ 
+
+**\## Available Scripts**
+
+
+ 
 
 In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ 
 
-The page will reload if you make edits.\
+**\### \`npm start\`**
+
+
+ 
+
+Runs the app in the development mode.\\
+
+Open \[http://localhost:3000\](http://localhost:3000) to view it in the browser.
+
+
+ 
+
+The page will reload if you make edits.\\
+
 You will also see any lint errors in the console.
-## My Reads App
 
-an App that shows three shelves, _current reading_ , _read_ , _want to read_
+**\## My Reads App**
 
-### How To use 
+
+ 
+
+an App that shows three shelves, _\_current reading\__ , _\_read\__ , _\_want to read\__
+
+
+ 
+
+**\### How To use**
+
+
+ 
 
 this how Home looks 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/11fac96d28e113d7ec4523e17bd23bb8e681e1907ff79aae.PNG)
 
-now select the shelve you want to move your Book , each Book has it's own dropsown to make it easy for you to switch between shelves:
-
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/af4384556ed0885154b07631d46ead3393c21a7806b1de97.PNG)
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/a376597439e750887bd661b873d4c296f2d6ed6f4e23d950.PNG)
 
 
+ 
+
+Now select the shelves you want to move your book , each Book has its own dropdown to make it easy for you to switch between shelves:
+
+
+ 
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/342eb7c6ceb5650e6446712dc406d6db68d4c8b5f8ac1685.PNG)
+
+
+
+
+ 
 
 to add a new book to the list click the bottom button 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/75ba3acc31e58db09083f62eb2ba245041a9b618b1bf344e.PNG)
 
-this button will takes you to the search page type what book you need to add your list
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/1e700f1f32b01fe811a0539ef243bb3fe4adf01e009b5b1b.PNG)
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/7ce207dadf15300fbf6e58378239818ea56a1152d28cd3b5.PNG)
+
+ 
+
+This button will take you to the search page type what book you need to add to your list.
+
+it will be added from the drop down.
+
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/4a86955541c96166d457d0d86f8a5a37a4d2545f394d5c69.PNG)
+
+---
