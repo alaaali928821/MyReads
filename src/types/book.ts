@@ -1,6 +1,6 @@
 export interface oneBook {
     shelf: string
-    imageLinks: { smallThumbnail: '' };
-    title: '';
-    authors: ''
+    imageLinks: { smallThumbnail: string };
+    title: string;
+    authors: string[]
 }
