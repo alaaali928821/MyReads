@@ -175,3 +175,8 @@ body,
   text-align: center;
   font-size: 0.8em;
 }
+
+.error-div{
+  background-color: palevioletred;
+  margin: 100px;
+}

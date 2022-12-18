@@ -41,6 +41,8 @@ const reducer = (state = initialState, action: Action): {} => {
                 ...action.payload,
                 shelf: ActionType.CURREAD
             }];
+        case ActionType.EMPTYSEARCHEDBOOK:
+            return state = [];
         default:
             return state
     }

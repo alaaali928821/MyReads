@@ -7,6 +7,7 @@ import { actionCreators } from "../state";
 import { useSelector } from 'react-redux';
 import { RootState } from '../state/reducers';
 import { ABook } from '../types/book';
+import { Link } from 'react-router-dom';
 
 export const Search: React.FC = () => {
     const filteredBooks: ABook[] = useSelector((state: RootState) => state.book)
@@ -21,6 +22,8 @@ export const Search: React.FC = () => {
         if (e.target.value !== "") {
             BookApis.search(e.target.value, 20).then((filterdBooks) => {
                 getSearchedBooks(filterdBooks);
+            }).catch(()=>{
+                emptySearchedBooks();
             })
         } else {
             emptySearchedBooks()
@@ -32,6 +35,7 @@ export const Search: React.FC = () => {
         <React.Fragment>
             <div className="search-books">
                 <div className="search-books-bar">
+                <Link className="close-search" to="/">Close</Link>
                     <input
                         type="text"
                         id="message"
@@ -49,7 +53,7 @@ export const Search: React.FC = () => {
                             <Book key={value.id} book={value} />
                         );
                     })}
-                    {!filteredBooks && <h1>No Books Found</h1>}
+                    {filteredBooks && filteredBooks.length === 0 &&  <div className="error-div"><h1>NO Books Found</h1></div>}
                 </div>
             </div>
         </React.Fragment>
