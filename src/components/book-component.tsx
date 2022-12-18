@@ -2,10 +2,10 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../state';
 import { ActionType } from '../state/action-types';
-import { oneBook } from '../types/book';
+import { ABook } from '../types/book';
 import * as BooksAPI from "../BooksAPI"
 
-function Book(props: { book: oneBook }) {
+function Book(props: { book: ABook }) {
   const dispatch = useDispatch();
 
   const { addTowantToread, addToRead, addtoCurrentlyReading } = bindActionCreators(actionCreators, dispatch)
@@ -28,7 +28,7 @@ function Book(props: { book: oneBook }) {
     }
   }
 
-  const updateSelectedBook = (book: oneBook, shelf: any) => {
+  const updateSelectedBook = (book: ABook, shelf: any) => {
     BooksAPI.update(book, shelf).then((updatedBook) => {
     })
   }

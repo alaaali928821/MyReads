@@ -2,7 +2,7 @@ import Shelf from "../components/shelf-component"
 import FindABook from "../components/find_A_book-component"
 import  { useEffect } from "react";
 import * as BooksAPI from "../BooksAPI"
-import { oneBook } from "../types/book"
+import { ABook } from "../types/book"
 import { Shelv } from "../types/shelf"
 import { useSelector } from "react-redux";
 import { RootState } from '../state/reducers';
@@ -19,7 +19,7 @@ function Home() {
     { key: 'read', name: 'Read' },
   ]
 
-  const AllBooks: oneBook[] = useSelector((state: RootState) => state.book)
+  const AllBooks: ABook[] = useSelector((state: RootState) => state.book)
   const dispatchBooks = useDispatch()
   const { getAllBooks } = bindActionCreators(actionCreators, dispatchBooks)
 

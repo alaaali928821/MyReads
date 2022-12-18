@@ -1,4 +1,4 @@
-export interface oneBook {
+export interface ABook {
     id?: string;
     shelf: string
     imageLinks: { smallThumbnail: string };

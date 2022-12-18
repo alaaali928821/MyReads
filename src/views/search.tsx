@@ -6,10 +6,10 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from "../state";
 import { useSelector } from 'react-redux';
 import { RootState } from '../state/reducers';
-import { oneBook } from '../types/book';
+import { ABook } from '../types/book';
 
 export const Search: React.FC = () => {
-    const filteredBooks: oneBook[] = useSelector((state: RootState) => state.book)
+    const filteredBooks: ABook[] = useSelector((state: RootState) => state.book)
     const [message, setMessage] = useState('');
     const dispatchSearchedBooks = useDispatch();
     const dispatchEmptySearchedBooks = useDispatch();
