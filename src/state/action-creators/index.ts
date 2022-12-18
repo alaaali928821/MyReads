@@ -57,3 +57,13 @@ export function emptySearchedBooks() {
         })
     }
 }
+
+
+export const setShelf = (payload: {} , shelfName: string) => {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: shelfName,
+            payload: payload
+        })
+    }
+}

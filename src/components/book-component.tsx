@@ -4,28 +4,15 @@ import { actionCreators } from '../state';
 import { ActionType } from '../state/action-types';
 import { ABook } from '../types/book';
 import * as BooksAPI from "../BooksAPI"
+import { setShelf } from '../state/action-creators';
 
 function Book(props: { book: ABook }) {
   const dispatch = useDispatch();
 
-  const { addTowantToread, addToRead, addtoCurrentlyReading } = bindActionCreators(actionCreators, dispatch)
+  const { setShelf } = bindActionCreators(actionCreators, dispatch)
   const handleOnSelect = (e: any) => {
-    switch (e.target.value) {
-      case ActionType.WTREAD:
-        updateSelectedBook(props.book, ActionType.WTREAD)
-        addTowantToread(props.book)
-        break;
-      case ActionType.READ:
-        updateSelectedBook(props.book, ActionType.READ)
-        addToRead(props.book)
-        break;
-      case ActionType.CURREAD:
-        updateSelectedBook(props.book, ActionType.CURREAD)
-        addtoCurrentlyReading(props.book)
-        break;
-      default:
-        break;
-    }
+    setShelf(props.book , e.target.value);
+    updateSelectedBook(props.book, e.target.value)
   }
 
   const updateSelectedBook = (book: ABook, shelf: any) => {

@@ -27,9 +27,6 @@ function Home() {
     BooksAPI.getAll().then((books) => {
       getAllBooks(books)
     })
-      .catch(() => {
-        // handel Error
-      })
   }, []);
 
   function booksOnShelf(shelf: Shelv) {
